@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convert SVG to Image</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <style>
+    img {
+      max-width: 300px;;
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Convert SVG to Image</h1>
+
+      <div class="field">
+        <label class="label">SVG Data</label>
+        <div class="control">
+          <textarea id="svgData" class="textarea" rows="3" placeholder="Paste or enter SVG data here"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <button id="convertButton" class="button is-primary">Convert SVG to Image</button>
+          <button id="convertToPngButton" class="button is-primary">Convert to PNG</button>
+        </div>
+      </div>
+
+      <div id="svg-image" class="box"></div>
+    </div>
+  </section>
+
+  <script>
+    (function(w,d) {
+     'use strict';
+     var svgImageElement;
+
+     function convertSvgToImage() {
+       var textarea = d.getElementById('svgData');
+       var svgData = textarea.value.trim(); // Get the SVG data from the textarea
+
+       // Only proceed if the textarea contains valid SVG data
+       if (svgData.startsWith('<svg') && svgData.endsWith('</svg>')) {
+         svgImageElement = new Image();
+         svgImageElement.src = 'data:image/svg+xml;base64,' + w.btoa(svgData);
+
+         var svgContainer = d.getElementById('svg-image');
+         svgContainer.innerHTML = '';
+         svgContainer.appendChild(svgImageElement);
+       } else {
+         console.error('Invalid SVG data');
+       }
+     }
+
+     function convertToPng() {
+       if (!svgImageElement) {
+         console.error('No SVG image available');
+         return;
+       }
+
+       var canvas = d.createElement('canvas');
+       var context = canvas.getContext('2d');
+       canvas.width = svgImageElement.width;
+       canvas.height = svgImageElement.height;
+
+       context.drawImage(svgImageElement, 0, 0);
+
+       var dataUrl = canvas.toDataURL('image/png');
+       var pngImageElement = new Image();
+       pngImageElement.src = dataUrl;
+
+       var svgContainer = d.getElementById('svg-image');
+       svgContainer.innerHTML = '';
+       svgContainer.appendChild(pngImageElement);
+     }
+
+     // Add click event listeners to the buttons
+     var convertButton = d.getElementById('convertButton');
+     var convertToPngButton = d.getElementById('convertToPngButton');
+     convertButton.addEventListener('click', convertSvgToImage);
+     convertToPngButton.addEventListener('click', convertToPng);
+   }(window, document));
+  </script>
+</body>
+</html>

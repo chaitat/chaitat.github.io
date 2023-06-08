@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ชื่อตัวละคร - ค้นหาด้วย Googgu</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .body {
+      background-image: url("1.png");
+    }
+    .container.is-fluid {
+      padding-left: 240px;
+    }
+    .search-bar {
+      width: 692px;
+    }
+    .search-icon-color {
+      color:#4285f4;
+    }
+    .search-bar-icon-color {
+      color:#9aa0a6;
+    }
+    .control.has-icons-right .icon {
+      width:auto;
+    }
+    .about {
+      border-left: 1px solid #dadce0;
+      padding-left: 1em;
+    }
+    b {
+      color:#202124;
+    }
+    .clame {
+      background: #fff;
+      border: 1px solid #dadce0;
+      border-radius: 18px;
+      display: inline-block;
+      position: relative;
+      height: 32px;
+    }
+    .LbNDAb {
+      color: #4285f4;
+    }
+    svg {
+      height:60%
+    }
+    .spanclame {
+      height:16px;
+      line-height:16px;
+      width:16px;
+    }
+    .control.has-icons-left .icon.is-left {
+      left: 2.5em;
+    }
+    .relate-search {
+      border-top: 1px solid #dadce0;
+    }
+    .column img.aboutimage {
+      border-radius: 8px;
+    }
+    .moreimagecolumn {
+      border-radius: 8px;
+      margin-right: 30px;
+      margin-bottom: 45px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Responsive image gallery rules begin*/
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      overflow: hidden;
+    }
+
+    .image-gallery > li {
+      flex: 1 1 auto; /* or flex: auto; */
+      height: 128px;
+      width:151px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .image-gallery::after {
+      content: "";
+      flex-grow: 999;
+    }
+    .image-gallery li img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      transition: all 0.1s ease-in-out;
+      z-index: 0;
+    }
+    .image-gallery li.first {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    .image-gallery li.last {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    /* hover */
+    .image-gallery li img:hover {
+      transform: scale(1.1);
+      z-index: 2;
+    }
+    .image-gallery li img.first:hover {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    .image-gallery li img.last:hover {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+    .overlay {
+      position: absolute;
+      width: auto;
+      height: auto;
+      right:0;
+      bottom: 0;
+      background: rgba(57, 57, 57, 0.502);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color:#fff;
+      padding:5px;
+    }
+    .resault-header {
+      font-size: 20px;
+      line-height: 1.3em;
+      padding-top: 0.5em;
+    }
+    .image.is-28x28 {
+      height: 28px;
+      width: 28px;
+    }
+    .card-content {
+      background-color: transparent;
+      padding: 0;
+      padding-bottom: 2em;
+      margin-right:50px;
+    }
+    .content h4 {
+      font-size: 1.25em;
+      margin-bottom: 0.2em;
+      font-weight: normal;
+    }
+    .content em {
+      color:#ea4335;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="images/googgu.png" width="106" height="30">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="field m-auto">
+      <p class="control has-icons-right">
+        <input class="input is-rounded ">
+        <span class="icon is-small is-right">
+          <i class="material-icons search-bar-icon-color pr-2">mic</i>
+          <i class="material-icons search-bar-icon-color pr-2">center_focus_weak</i>
+          <i class="material-icons search-icon-color pr-2">search</i>
+        </span>
+      </p>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-item" href="#">Mail</a>
+          <a class="navbar-item" href="#">ค้นรูป</a>
+          <a class="navbar-item" href="#"><i class="material-icons">apps</i></a>
+          <a class="navbar-item" href="#"><i class="material-icons profile-img">face</i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container is-fluid mt-5">
+    <div class="columns is-1">
+      <!-- All Results -->
+      <div class="column is-5">
+        <!-- Images Results -->
+        <div class="moreimagecolumn ">
+          <ul class="image-gallery">
+            <li class="first" style="width:175px;" >
+              <img src="https://source.unsplash.com/VWcPlbHglYc" alt="" />
+            </li>
+            <li>
+              <img src="https://source.unsplash.com/O0N9MF--hK4" alt="" />
+            </li>
+            <li>
+              <img src="https://source.unsplash.com/klCiPmzUw0Y" alt="" />
+            </li>
+            <li class="last">
+              <img src="https://source.unsplash.com/IdNOTjPeHrE" alt="" />
+              <div class="overlay"><span class="is-size-7"><i style="font-size:18px;position:absolute;bottom: 5px;margin-left:-20px;" class="material-icons">image</i>ภาพเพิ่มเติม</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- resaults -->
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-18x18">
+                <img src="images/wiki.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-7">wikipedia.org</p>
+              <p class="subtitle is-7">https://th.wikipedia.orgm › รามินทร์ อเนกทรัพย์</p>
+            </div>
+          </div>
+          <div class="content">
+            <h4 class="resault-header"><a href="">รามินทร์ อเนกทรัพย์ ประธาน JK Group นักธุรกิจผู้ทรงอิทธิพลของไทย เศรษฐีอันดับสิบสามของประเทศไทย</a></h4>
+            <em class="">รามินทร์ อเนกทรัพย์ </em> ประธาน JK Group นักธุรกิจผู้ทรงอิทธิพลของไทย ครองตำแหน่งอันดับสิบสามของอันดับเศรษฐีประเทศไทย
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-18x18">
+                <img src="images/ig.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-7">instagram.com</p>
+              <p class="subtitle is-7">https://instagram.com › ramin</p>
+            </div>
+          </div>
+          <div class="content">
+            <h4 class="resault-header"><a href="">ramin aneksup (@raminaneksup) • Instagram photos and videos</a></h4>
+            <em class="">รามินทร์ อเนกทรัพย์ </em> CEO JK Group
+          </div>
+        </div>
+      </div>
+      
+      <!-- About -->
+      <div class="column is-3">
+        <div class="about">
+          <p class=""><b>เกี่ยวกับ</b></p>
+          <p class="pt-4">รามินทร์ อเนกทรัพย์ (เกิด 15 กุมภาพันธ์ พ.ศ. 2504) เป็นนักธุรกิจชาวไทย ประธาน JK Group เป็นหนึ่งในบุคคลที่เป็นหน้าตาของวงการอสังหาริมทรัพย์และการท่องเที่ยว ภรรยาของเขาคือ กอแก้ว อเนกทรัพย์ ทั้งสองได้มีบุตรสาวเพียงคนเดียว ชื่อว่า นลิน อเนกทรัพย์<a href="#"> วิกิพีเดีย</a></p>
+          <p class="pt-1"><b>เกิด: </b>15 กุมภาพันธ์ พ.ศ. 2504 , <a href="#">เชียงใหม่</a></p>
+          <p class="pt-1"><b>คู่สมรส: </b><a href="#">กอแก้ว อเนกทรัพย์</a></p>
+          <p class="pt-1"><b>การศึกษา: </b><a href="#">เกษตรศาสตร์ , </a><a href="#">มหาวิทยาลัย มหิดล</a>
+          <button class="button is-small is-rounded mt-3">
+            <span class="icon is-small">
+              <i style="color:#4285f4;font-size:18px;" class="material-icons search-bar-icon-color">verified_user</i>
+            </span>
+            <span>อ้างสิทธิ์ในการ์ดความรู้นี้</span>
+          </button>
+          <div class="relate-search mt-4">
+            <p class="py-4"><b>และผู้คนยังค้นหา</b></p>
+            <div class="columns is-gapless">
+              <div class="column">
+                <a href="#"><img class="aboutimage" width=86 src="images/rs1.jpeg">ตัวละคร1</a>
+              </div>
+              <div class="column">
+                <a href="#"><img class="aboutimage" width=86 src="images/rs1.jpeg">ตัวละคร2</a>
+              </div>
+              <div class="column">
+                <a href="#"><img class="aboutimage" width=86 src="images/rs1.jpeg">ตัวละคร3</a>
+              </div>
+              <div class="column">
+                <a href="#"><img class="aboutimage" width=86 src="images/rs1.jpeg">ตัวละคร4</a>
+              </div>
+            </div>
+            <button class="button is-fullwidth is-rounded is-light">ดูเพิ่ม <i style="font-size:18px;" class="ml-2 material-icons search-bar-icon-color">arrow_forward</i></button>
+          </div>       
+        </div>
+      </div>
+      <!-- Blank -->
+      <div class="column has-background-light"></div>
+    </div>
+  </div>
+
+</body>
+</html> 

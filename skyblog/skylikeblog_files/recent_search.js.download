@@ -1,0 +1,440 @@
+var search_url = "https://pantip.com/search";
+
+$(document).ready(function() {
+	$(document).on('click', '#pt-search-btn', function(){	
+		$('#block-main-search').css('display','block')
+		$('body').css('overflow','hidden')
+		getRecent(listRecentResult)
+		return false
+	});
+
+	$("#block-close-main-search").click(function(){
+		$('body').css('overflow','auto')
+		$('#block-main-search').css('display','none')
+	}); 
+
+	//click search page
+	$("#icon-button-search").click(function(){
+		var keyword = $('#input-main-search').val()
+		keyword = keyword.trim()
+		if(keyword.length >= 1){
+			url = search_url + "?q=" + encodeURIComponent(keyword);
+			checkMemberLogin(keyword, url)
+			window.open(url, '_blank');
+		}
+	}); 
+
+	let time = 0;
+	$("#input-main-search").keyup(function(){
+		clearTimeout(time);
+
+		time = setTimeout(function() {
+			var keyword = $('#input-main-search').val()
+			keyword = keyword.trim()
+			if(keyword.length >= 1){
+				apiSearchQuery(keyword, listSearchResult)
+			}else{
+				getRecent(listRecentResult)
+			}
+		}, 100);
+		
+		// var keyword = $('#input-main-search').val()
+		// keyword = keyword.trim()
+		// if(keyword.length >= 1){
+		// 	apiSearchQuery(keyword, listSearchResult)
+		// }else{
+		// 	getRecent(listRecentResult)
+		// }
+	}); 
+
+
+
+
+	
+	//remove all
+	$('.m-search-container').on('click', '.search-recnt-link', function(){
+		//data-status
+		var status = $('#block-result-search > li:first').attr('data-status');
+
+		if(status == 'local'){
+			showRecentHeader(false)
+			showEmptyMessage(true)
+			clearResultSearch()
+			localStorage.removeItem('recent')
+		}else{
+			$.ajax({
+				type: 'POST',
+				url: '/searchbox/apiRemoveRecent',
+				dataType: 'json',
+				data: {
+					type: 'all',
+					ref_id: null,
+				},
+				success: function (data) {
+					showRecentHeader(false)
+					showEmptyMessage(true)
+					clearResultSearch()
+				}
+			});
+		}
+		return false;
+	});
+
+
+
+	//remove select recent
+	$(document).on('click', '.search-recnt-cancel', function(){
+		var id = $(this).attr('data-position');
+		var status = $(this).attr('data-status');
+		var title = $(this).attr('data-title');
+		var typeTh = $(this).attr('data-type-th');
+
+		if(status == 'recent_api'){
+			$.ajax({
+				type: 'POST',
+				url: '/searchbox/apiRemoveRecent',
+				dataType: 'json',
+				data: {
+					type: $(this).attr('data-mode'),
+					ref_id: $(this).attr('data-ref'),
+				},
+				success: function (data) {
+					$('#removeblock-'+id).empty();
+					if(data.length <= 0){
+						showEmptyMessage(true)
+						showRecentHeader(false)
+					}
+				}
+			});
+		}else{
+			var data = getLocalStorageRecent();
+			var count = getPositionRecent(data, title, typeTh)
+			if(count !== false){
+				data.splice(count, 1);
+				localStorage.removeItem('recent')
+				localStorage.setItem('recent', JSON.stringify(data));
+				$('#removeblock-'+id).empty();
+				if(data.length <= 0){
+					showEmptyMessage(true)
+					showRecentHeader(false)
+				}
+			}
+		}
+		return false;
+	});
+
+
+	//click open topic
+	$(document).on('click', '.click-topic', function(){
+		var id = $(this).attr('data-id');
+		var type = $(this).attr('data-type');
+		var typeTh = $(this).attr('data-type-th');
+		var title = $(this).attr('data-title');
+		var url = $(this).attr('data-url');
+		var avatar = $(this).attr('data-avatar');
+		var status = $(this).attr('data-status');
+		sendRef(id, type, typeTh, title, url, avatar, status);
+		return false;
+	});
+
+	//recent
+	function listRecentResult(json) {
+		clearResultSearch()
+		if(json.length <= 0){
+			showEmptyMessage(true)
+		}else{
+			//show header
+			showRecentHeader(true)
+			var countId = 0
+			$.each(json, function (index, item) {
+				countId++;
+				var blockTitle = ''
+				var dataStatus = 'local'
+				var dataRefId = ''
+
+				if(item.ref_id != '' && item.ref_id != null){
+					dataStatus = 'recent_api'
+					dataRefId = item.ref_id
+				}
+				
+
+				blockTitle += '<span id="block-title-'+countId+'" class="search-list__primary-text" >'+item.title+'</span>';
+				blockTitle += '<span id="block-subtitle-'+countId+'" class="search-list__secondary-text">'+item.type_th+'</span></span>';
+
+				var dataType = 'data-url="'+item.url+'" data-type-th="'+item.type_th+'"';
+				dataType += ' data-type="'+item.type+'" data-avatar="'+item.avatar+'" data-status="'+dataStatus+'" ';
+				dataType += ' data-title="'+item.title+'" data-id="'+item.id+'"  ';
+
+				var dataRemove = 'data-position="'+countId+'" data-title="'+item.title+'" data-mode="word" data-type-th="'+item.type_th+'"';
+				dataRemove += 'data-id="'+item.id+'"  data-status="'+dataStatus+'"  data-ref="'+dataRefId+'" '
+
+				var li ='<li id="removeblock-'+countId+'" class="search-list search-list-recent"  data-status="'+dataStatus+'">';
+				li +='<a href="#" class="click-topic"  '+dataType+'>';
+				li +='<span class="search-list-icon" style="background-image: url(\''+item.avatar+'\'); background-size: cover; background-position: center; background-repeat: no-repeat;"></span>';
+				li +='<span class="search-list-text">';
+				li += blockTitle;
+				li +='</a>';
+				li +='<button id="removeblock-button-'+countId+'" class="search-recnt-cancel" '+dataRemove+'><img src="https://ptcdn.info/search/icon/ic-close-512px.png" alt="cancel"></button>';
+				li +='</li></li>';
+				$("#block-result-search").append(li);
+			})
+
+
+			if(checkAgent()){
+				$("#block-result-search").append('<div style="height: 128px;"></div>');
+			}
+		}
+	}
+
+	//search results
+	function listSearchResult(param) {
+		showEmptyMessage(false)
+		clearResultSearch()
+		var json = jQuery.parseJSON(param)
+		if(json.success && json.data.length > 0){
+			//hide header
+			showRecentHeader(false)
+			var countId = 0
+			$.each(json.data, function (index, item) {
+				countId++;
+
+				var blockTitle = ''
+				var item_type = 0
+				var dataStatus = item.status
+				var dataTitle = item.title
+				if(item.type != null){
+					item_type = item.type
+				}
+				
+				
+				if(item.type != 'search_room' && item.type != 'search_all'){
+					if(item.forum_tag != null){
+						var type_th = 'ห้องที่มีแท็ก "' + item.forum_tag + '"';
+					}else{
+						var type_th = item.type_th;
+					}
+					blockTitle += '<span id="block-title-'+countId+'" class="search-list__primary-text" >'+item.title+'</span>';
+					blockTitle += '<span id="block-subtitle-'+countId+'" class="search-list__secondary-text">'+type_th+'</span></span>';
+				}else{
+					dataTitle = $('#input-main-search').val()
+					blockTitle += '<span id="block-title-'+countId+'" class="search-list__primary-link" >'+item.title+'</span>';
+				}
+
+				var dataType = 'data-url="'+item.url+'" data-type-th="'+item.type_th+'" data-id="'+item.id+'"';
+				dataType += ' data-type="'+item_type+'" data-avatar="'+item.avatar+'" data-status="'+dataStatus+'" ';
+				dataType += ' data-title="'+dataTitle+'" ';
+				
+				var li ='<li class="search-list">';
+				li +='<a href="#"  class="click-topic" '+dataType+'>';
+				li +='<span class="search-list-icon" style="background-image: url(\''+item.avatar+'\'); background-size: cover; background-position: center; background-repeat: no-repeat;"></span>';
+				li +='<span class="search-list-text">';
+				li += blockTitle;
+				li +='</a></li></li>';
+				$("#block-result-search").append(li);
+			})
+		}
+	}
+
+
+	//check member login
+	function checkMemberLogin(keyword, url){
+		$.ajax({
+			type: 'POST',
+			url: '/searchbox/apigetrecent',
+			dataType: 'json',
+			success: function (rs) {
+				if(!rs.success){
+					saveLocalStorage(0, 'คำค้นหา', keyword, url, 'word', 'local')
+				}else{
+					apiSaveRecent(keyword, 0, 'search_all')
+				}
+			}
+		});
+	}
+
+	//api save react
+	function apiSaveRecent(keyword, source_id, type){
+		$.ajax({
+			type: 'POST',
+			url: '/searchbox/apiSaveRecent',
+			dataType: 'json',
+			data: {
+				keyword: encodeURI(keyword),
+				source_id: source_id,
+				type : type
+			},
+			success: function (data) {
+				//console.log(data)
+			}
+		});
+	}
+
+	function getPositionRecent(data, keyword, type_th){
+		var count = false;
+		for (var i = 0; i < data.length; i++) {
+			if(data[i].title == keyword && data[i].type_th == type_th){
+				count = i;
+				break;
+			}
+		} 
+		return count;
+	}
+
+	//get recent
+	function getRecent(listRecentResult){
+		var resultLocal = getLocalStorageRecent();
+		$.ajax({
+			type: 'POST',
+			url: '/searchbox/apigetrecent',
+			dataType: 'json',
+			success: function (json) {
+				var resultJson = json.data;
+				if(!json.success){
+					listRecentResult(resultLocal);		
+				}else{
+					if(resultJson.length <= 0){
+						listRecentResult([]);
+					}else{
+						listRecentResult(resultJson);
+					}
+				}
+			}
+		});
+	}
+	
+
+	//get search result
+	function apiSearchQuery(keyword, callback){
+		var data_search = {
+			keyword: encodeURI(keyword)
+		}
+		$.post('/searchbox/nodejsapi', data_search, function(data){
+			callback(data)
+		}).fail(function(xhr, ajaxOptions, thrownError) {			
+			console.log(thrownError)			
+		});
+	}
+
+	
+	//send ref
+	function sendRef(id, type, typeTh, title, url, avatar, status){
+		var title = title
+		var url = url
+		var avatar = avatar
+		var keyword = $('#input-main-search').val();
+
+		if(status == 'api'){
+			saveLocalStorage(id, typeTh, title, url, avatar, status)
+		}
+
+		if(type == null || type == 'undefined'){
+			type = ''
+		}
+
+		$.ajax({
+			type: 'POST',
+			url: '/searchbox/ref',
+			dataType: 'json',
+			async:    false,
+			data: {
+				type: encodeURI(type),
+				id: id,
+				title: encodeURI(title),
+				url: url,
+				avatar: encodeURI(avatar),
+				keyword: keyword
+			},
+			success: function (data) {
+				window.open(data.url, '_blank');
+			}
+		});
+
+		if(status == 'recent_api' || status == 'local'){
+			getRecent(listRecentResult)
+		}
+	}
+
+
+
+	function saveLocalStorage(id, typeTh, title, url, avatar, status){
+		if(avatar == 'word')
+			avatar = 'https://ptcdn.info/search/icon/word.png';
+
+		if (avatar.indexOf('search.png') > -1) {
+			avatar = 'https://ptcdn.info/search/icon/word.png';
+		}
+
+		var data = getLocalStorageRecent();
+		data = checkDuplicateData(data, title, typeTh);
+		
+		var temp = {
+			type_th: typeTh,
+			id: id,
+			title: title,
+			url: url,
+			avatar: avatar,
+			status: status
+		}
+		data.unshift(temp)
+		if(data.length >10){
+			data.splice(-1,1)
+		}
+		localStorage.setItem('recent', JSON.stringify(data));
+	}
+
+
+
+	function getLocalStorageRecent(){
+		var data = []
+		var recent = localStorage.getItem('recent');
+		if(recent != null){
+			data = JSON.parse(recent)
+		}
+		return data;
+	}
+
+
+	function checkDuplicateData(data, keyword, type_th){
+		var count = false;
+		for (var i = 0; i < data.length; i++) {
+			if(data[i].title == keyword && data[i].type_th == type_th){
+				count = i;
+				break;
+			}
+		} 
+		if(count !== false){
+			data.splice(count, 1);
+		}
+		return data;
+	}
+
+
+	function clearResultSearch(){
+		$("#block-result-search").empty();
+	}
+	function showRecentHeader(status){
+		if(status){
+			$('#block-header-recent').css('display','')
+		}else{
+			$('#block-header-recent').css('display','none')
+		}
+	}
+	function showEmptyMessage(status){
+		if(status){
+			$('#block-empty-message').css('display','')
+		}else{
+			$('#block-empty-message').css('display','none')
+		}
+	}
+
+	function checkAgent(){
+		if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+});
+
+

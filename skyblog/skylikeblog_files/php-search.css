@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+.search-container * {
+  box-sizing: border-box; }
+
+.m-search-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: block;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  z-index: 1020;
+  border-radius: 0; }
+
+.m-search-container {
+  border-color: rgba(0, 0, 0, 0.24);
+  background-color: #2D2A49;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100vh - 49px);
+  min-width: 288px;
+  max-width: auto;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+
+.pt-mobile__search {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #1F1D33;
+  font-size: 12px;
+  align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+  background-color: #2D2A49;
+  width: 100%;
+  z-index: 1060; }
+  .pt-mobile__search .pt-left__nav li:first-child {
+    cursor: pointer; }
+  .pt-mobile__search ul {
+    padding: 0;
+    margin: 0; }
+    .pt-mobile__search ul a {
+      color: rgba 233, 229, 246, 0.87; }
+    .pt-mobile__search ul li {
+      float: left;
+      padding: 0 16px 0 16px;
+      margin: 0;
+      align-items: center;
+      list-style: none;
+      line-height: 48px;
+      height: 48px;
+      color: rgba(233, 229, 246, 0.87); }
+    .pt-mobile__search ul li:hover {
+      background-color: #44416F; }
+
+.pt-search-nav {
+  flex: 1;
+  display: flex;
+  position: relative; }
+  .pt-search-nav > .search-box {
+    background-color: #44416F;
+    border: 1px solid #1F1D33;
+    border-radius: .125rem;
+    height: 30px;
+    width: 100%;
+    margin: auto 16px auto 0;
+    color: #FFFFFF;
+    padding-left: 12px;
+    padding-right: 32px; }
+  .pt-search-nav > .search-box::placeholder {
+    color: rgba(233, 229, 246, 0.87); }
+  .pt-search-nav > i {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    color: rgba(233, 229, 246, 0.87); }
+
+.icon-va-8 {
+  vertical-align: -8px; }
+
+.search-box-recent {
+  display: flex;
+  height: 40px;
+  padding: 8px 24px;
+  justify-content: space-between;
+  align-items: center; }
+
+.search-recnt-text {
+  color: rgba(233, 229, 246, 0.6);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.5; }
+
+.search-recnt-link {
+  color: #b39ddb;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none; }
+
+.search-recnt-link:hover {
+  color: #D1C4E9;
+  text-decoration: underline; }
+
+.search-recnt-link:visited {
+  color: #B39DDB;
+  text-decoration: underline; }
+
+.search-recnt-link:active {
+  color: #9575CD; }
+
+.search-lists-box {
+  padding: 8px 0;
+  margin: 0;
+  max-height: calc((56px * 10) + 16px); }
+
+.search-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center; }
+
+.search-list:hover {
+  background: #282540; }
+
+.search-list:active {
+  background: #222038; }
+
+.search-list a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-decoration: none;
+  height: 56px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+.search-list a:link, .search-list a:hover, .search-list a:visited, .search-list a:active {
+  text-decoration: none; }
+
+.search-list.search-list-recent a {
+  width: calc(100% - 56px); }
+
+.search-list-icon {
+  background-color: rgba(0, 0, 0, 0.38);
+  margin-left: 0;
+  margin-right: 16px;
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; }
+
+.search-list-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 8px; }
+
+.search-list__primary-text {
+  color: rgba(233, 229, 246, 0.87);
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block; }
+
+.search-list__primary-link {
+  color: #b39ddb;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block; }
+
+.search-list__secondary-text {
+  color: rgba(233, 229, 246, 0.6);
+  font-size: 0.875rem;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  margin-top: 0; }
+
+.search-recnt-cancel {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0 16px 0 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s; }
+
+.search-recnt-cancel:hover {
+  color: rgba(233, 229, 246, 0.87);
+  background: rgba(115, 115, 153, 0.12); }
+
+.search-recnt-cancel:active {
+  background: #222038; }
+
+.search-recnt-cancel img {
+  width: 24px;
+  height: 24px; }
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/material-design-icons/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(fonts/material-design-icons/MaterialIcons-Regular.woff2) format("woff2"), url(fonts/material-design-icons/MaterialIcons-Regular.woff) format("woff"), url(fonts/material-design-icons/MaterialIcons-Regular.ttf) format("truetype"); }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+  font-size: 18px; }
+
+.material-icons.md-24 {
+  font-size: 24px; }
+
+.material-icons.md-36 {
+  font-size: 36px; }
+
+.material-icons.md-48 {
+  font-size: 48px; }
+
+.material-icons.md-64 {
+  font-size: 64px; }
+
+.material-icons.md-72 {
+  font-size: 72px; }

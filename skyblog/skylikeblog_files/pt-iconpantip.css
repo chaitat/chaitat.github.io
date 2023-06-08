@@ -1,0 +1,291 @@
+/* Icon Pantip */
+/* Icons Pantip Design*/
+.pantip-icons {
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+  display: inline-flex;
+  background-size: contain;
+  background-position: top left;
+  vertical-align: middle; }
+
+/* Rules for sizing the icon. */
+.pantip-icons.md-18 {
+  width: 18px;
+  height: 18px;
+  line-height: 18px; }
+
+.pantip-icons.md-24 {
+  width: 24px;
+  height: 24px;
+  line-height: 24px; }
+
+.pantip-icons.md-36 {
+  width: 36px;
+  height: 36px;
+  line-height: 36px; }
+
+.pantip-icons.md-48 {
+  width: 48px;
+  height: 48px;
+  line-height: 48px; }
+
+.pantip-icons.md-64 {
+  width: 64px;
+  height: 64px;
+  line-height: 64px; }
+
+.pantip-icons.md-72 {
+  width: 72px;
+  height: 72px;
+  line-height: 72px; }
+
+/* Rules for colorize the icon. */
+.pantip-icons.icolor-primary {
+  opacity: 0.87; }
+
+.pantip-icons.icolor-secondary {
+  opacity: 0.6; }
+
+.pantip-icons.icolor-disabled {
+  opacity: 0.3; }
+
+.pantip-icons.icolor-white {
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%); }
+
+.pantip-icons.icolor-black {
+  -webkit-filter: brightness(0%);
+  filter: brightness(0%); }
+
+.pt-ic-topic_type_talking {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/icon_topic_talking-512px.png); }
+
+.pt-ic-topic_type_news {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/icon_topic_news-512px.png); }
+
+.pt-ic-topic_type_poll {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/icon_topic_poll-512px.png); }
+
+.pt-ic-topic_type_question {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/icon_topic_question-512px.png); }
+
+.pt-ic-topic_type_review {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/icon_topic_review-512px.png); }
+
+.pt-ic-topic_type_sell {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/icon_topic_sell-512px.png); }
+
+.pt-ic-add_post {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/icon-add_post.png); }
+
+.pt-ic-comment {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/icon-comment.png"); }
+
+.pt-ic-comment-outline {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/icon-comment-outline.png"); }
+
+.pt-ic-breadcrumb {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/icon-breadcrumb.png); }
+
+.pt-ic-tag_local {
+  background-image: url(https://ptcdn.info/mobile/pantip_icon/ic-tag_local.png); }
+
+.pt-ic-club {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-club-512px.png"); }
+
+.pt-ic-defamation {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-defamation-512px.png"); }
+
+.pt-ic-event {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-event-512px.png"); }
+
+.pt-ic-forum-outline {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-forum_outline-512px.png"); }
+
+.pt-ic-logout {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-logout-512px.png"); }
+
+.pt-ic-profile {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-profile-512px.png"); }
+
+.pt-ic-profile_setting {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-profile_setting-512px.png"); }
+
+.pt-ic-setting-block {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-setting_applications-512px.png"); }
+
+.pt-ic-terms {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-terms-512px.png"); }
+
+.pt-ic-mail-outline {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-mail_outline-512px.png"); }
+
+.pt-ic-notification-outline {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-notification_outline-512px.png"); }
+
+.pt-ic-setting {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-setting-512px.png"); }
+
+.pt-ic-gavel {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-gavel-512px.png"); }
+
+.pt-ic-headset_mic {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-headset_mic-512px.png"); }
+
+.pt-ic-live_help {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-live_help-512px.png"); }
+
+.pt-ic-call_center {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-call_center-512px.png"); }
+
+.pt-ic-suggestion_post {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-suggestion_post-512px.png"); }
+
+.pt-ic-rules {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-rules-512px.png"); }
+
+.pt-ic-contact_support {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-contact_support-512px.png"); }
+
+.pt-ic-copy {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic_copy_512px.png"); }
+
+.pt-ic-cut {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic_cut_512px.png"); }
+
+.pt-ic-paste {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic_paste_512px.png"); }
+
+.pt-ic-sunny {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/icon-weather_sunny.png"); }
+
+.pt-ic-sunny_cloudy {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-weather_sunny_cloudy.png"); }
+
+.pt-ic-night {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-weather_night.png"); }
+
+.pt-ic-night_cloudy {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-weather_night_cloudy.png"); }
+
+.pt-ic-storm_hard {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-weather_storm_hard.png"); }
+
+.pt-ic-umbrella {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-weather_umbrella.png"); }
+
+.pt-ic-snowflake {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-weather_snowflake.png"); }
+
+.pt-ic-cloudy {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-weather_cloudy.png"); }
+
+.pt-ic-facebook {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-social_fb-512px.png"); }
+
+.pt-ic-twitter {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-social_tw-512px.png"); }
+
+.pt-ic-youtube {
+    background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-social_yt-512px.png"); }
+  
+.pt-ic-instragram {
+    background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-social_ig-512px.png"); }
+  
+.pt-ic-tiktok {
+    background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-social_tt-512px.png"); }
+
+.pt-ic-logo_facebook {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-social_logo_fb-512px.png"); }
+
+.pt-ic-logo_twitter {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-social_logo_tw-512px.png"); }
+
+.pt-ic-facebook-f {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/icon_facebook-512px.png"); }
+
+.pt-ic-google {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/icon_google-512px.png"); }
+
+.pt-ic-home {
+    background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-home_outline-512px.png"); }
+.pt-ic-app {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/baseline-apps-512px.png"); }
+
+.pt-ic-dropdown {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/baseline-arrow_drop_down-512px.png"); }
+
+.pt-ic-clear {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/baseline-clear-512px.png"); }
+
+.pt-ic-mailoutline {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/baseline-mail_outline-512px.png"); }
+
+.pt-ic-notifications {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/baseline-notifications_none-512px.png"); }
+
+.pt-ic-search {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/baseline-search-512px.png"); }
+
+.pt-ic-menu {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/baseline-menu-512px.png"); }
+
+.pt-ic-account {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/baseline-account_circle-512px.png"); }
+  
+.pt-ic-stars-black-outline {
+	background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-stars-black-outline_512px.png");}
+
+.pt-ic-pantip_community {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-pantip_community-512px.png");
+}
+  
+.pt-ic-forum_shortcut {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-forum_shortcut-512px.png");
+}
+  
+.pt-ic-tag_shortcut {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-tag_shortcut-512px.png");
+}
+  
+.pt-ic-pantip_communities {
+  background-image: url("https://ptcdn.info/mobile/pantip_icon/ic-pt_communities-outline-512px.png");
+}
+  
+ul.pt-lists_style-none {
+  padding: 0;
+  padding-left: 0px;
+  margin: 0;
+}
+  
+ul.pt-lists_style-none li {
+  list-style: none;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+  
+ul.pt-lists_style-none li a {
+  color: #B39DDB;
+  text-decoration: none;
+}
+  
+ul.pt-lists_style-none li a:link {
+  color: #B39DDB;
+  text-decoration: none;
+}
+  
+ul.pt-lists_style-none li a:visited {
+  color: #B39DDB;
+  text-decoration: none;
+}
+  
+ul.pt-lists_style-none li a:hover {
+  color: #B39DDB;
+  text-decoration: underline;
+}
+  
+ul.pt-lists_style-none.menu_about {
+  margin: 16px 16px 0 16px;
+  padding-left: 8px;
+}

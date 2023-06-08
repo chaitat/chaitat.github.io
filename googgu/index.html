@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SearchS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style type="text/css">
+    .profile-img {
+      font-size: 32px;
+    }
+    .svg-in-search {
+      width:38px;
+      height:24px;
+      padding:0 8px;
+    }
+    .search-color {
+      color:#9aa0a6;
+    }
+    .search-bar {
+      max-width: 584px;
+    }
+    .control.has-icons-right .input, .control.has-icons-right .select select {
+    padding-right: 5em;
+    height:3em;
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero is-fullheight">
+  <!-- Hero head -->
+  <div class="hero-head">
+    <nav class="navbar" role="navigation" aria-label="main navigation">      
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a class="navbar-item" href="#">Mail</a>
+            <a class="navbar-item" href="#">ค้นรูป</a>
+            <a class="navbar-item" href="#"><i class="material-icons">apps</i></a>
+            <a class="navbar-item" href="#"><i class="material-icons profile-img">face</i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p><img class="pb-5" src="images/googgu.png" width=272 height=77 alt=""></p>
+
+      <div class="field search-bar m-auto">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input is-rounded">
+          <span style="padding-top:8px" class="icon is-small is-left">
+            <i class="material-icons search-color">search</i>
+          </span>
+          <span style="padding-top:8px" class="icon is-small is-right">
+            <i class="material-icons search-color pr-2">mic</i>
+            <i class="material-icons search-color pr-6">center_focus_weak</i>
+          </span>
+        </p>
+      </div>
+
+      <p class="pt-5"><a href="results.html" class="button is-light">ค้นหาด้วย Googgu</a></p>
+      <p class="pt-5 pb-5 is-size-7">แสดง Googgu ใน: English</p>
+    </div>
+  </div>
+
+  <!-- Hero footer -->
+  <div class="hero-foot is-fullwidth has-background-light p-3 is-size-7">
+    <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">เกี่ยวกับ</a>
+      <a class="navbar-item">โฆษณา</a>
+      <a class="navbar-item">ธุรกิจ</a>
+      <a class="navbar-item">วิธีการทำงานของ Search</a>
+    </div>
+    <div class="navbar-end">
+      <a class="navbar-item">ความเป็นส่วนตัว</a>
+      <a class="navbar-item">ข้อกำหนด</a>
+      <a class="navbar-item">การตั้งค่า</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
