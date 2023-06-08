@@ -1775,7 +1775,7 @@ a.pt-m-btn.disabled, fieldset:disabled a.btn {
 }
 .pt-m-reaction-button {
 	width: 2em;
-	border: 1px solid #232323;
+	
 	border-radius: 0.2rem;
 	z-index: 980;
 	position: relative;
@@ -1890,7 +1890,7 @@ a.pt-m-btn.disabled, fieldset:disabled a.btn {
 }
 .pt-m-list-count-reaction {
 	font-size: 12px;
-	color: #575F85;
+	color: #222222;
 }
 .pt-m-display-post .pt-tag-post {
 	padding: 0 0 12px 0;
