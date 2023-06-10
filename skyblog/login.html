@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="is-sky-background">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สมัครสมาชิกสกายไลค์</title>
+  <link rel="icon" href="https://m.pantip.com/fav-icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style type="text/css">
+    .is-sky-background {
+      background-color: #149ED9;
+    }
+    /* #77A2D1 */
+    .is-blue-background {
+      background-color: #77A2D1;
+    }
+    .is-nav-background {
+      background-color: #1572A1;
+    }
+    a.navbar-item:hover {
+      background-color: #149ED9;
+      color:#ffffff;
+    }
+    .hero-body {
+      width:100%;
+      margin:auto;
+      max-width: 1600px;
+    }
+    .text-yellow {
+      color: #ffd500;
+    }
+    .hero-background {
+      height:240px;
+      background-image: url('images/skylikeheader.png');
+      background-repeat: no-repeat;
+      background-position: center; 
+    }
+    .is-divider {
+      display: block;
+      position: relative;
+      border-right: 1px solid #dbdbdb;
+      height: 0.1rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .subtitle b {
+      color: #149ED9;
+    }
+    .navbar-item {
+      color: #ffffff
+    }
+    .hero {
+      border-bottom: 1px solid;
+    }
+    .shake-it {
+      /* Start the shake animation and make the animation last for 0.5 seconds */
+      animation: shake 0.5s;
+
+      /* When the animation is finished, start again */
+      animation-iteration-count: 1;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+      20% { transform: translate(-3px, 0px) rotate(1deg); }
+      30% { transform: translate(3px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+      60% { transform: translate(-3px, 1px) rotate(0deg); }
+      70% { transform: translate(3px, 1px) rotate(-1deg); }
+      80% { transform: translate(-1px, -1px) rotate(1deg); }
+      90% { transform: translate(1px, 2px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-blue-background is-medium-with-navbar hero-background">
+    <div class="hero-body">
+    </div>
+    <nav class="navbar">
+      <div class="container is-max-widescreen">
+        <div id="navMenu" class="navbar-menu is-nav-background">
+          <div class="navbar-start flex-grow:1">
+            <a class="navbar-item">หน้าแรก</a>
+            <a class="navbar-item">คอมมูนิตี้</a>
+            <a class="navbar-item">กิจกรรม</a>
+            <a class="navbar-item">แลกพอยต์</a>
+            <a class="navbar-item">อื่นๆ</a>
+            <div class="navbar-item">
+              <input class="input" type="email" placeholder="Search">
+            </div>
+          </div>
+          <div class="navbar-end">
+            <a class="navbar-item">ตั้งกระทู้</a>
+            <a class="navbar-item">เข้าสู่ระบบ / สมัครสมาชิก</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <section class="container is-max-desktop">
+    <div class="has-text-centered">
+      <p class="title pt-6 has-text-white">ลงชื่อเข้าใช้งาน</p>
+      <p class="subtitle py-6 has-text-white">ระบบจะจดจำข้อมูลการเข้าสู่ระบบของคุณแบบ "การลงชื่อเข้าใช้ถาวร"</p>
+    </div>
+
+    <div class="columns">
+      <div class="column" style="border-right: 1px solid #dbdbdb">
+        <div class="field pt-5">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="ชื่อผู้ใช้ / อีเมล">
+            <span class="icon is-small is-left">
+              <i class="material-icons ">person</i>
+            </span>
+          </p>
+        </div>
+        <div class="field pt-3">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="password" placeholder="รหัสผ่าน">
+            <span class="icon is-small is-left">
+              <i class="material-icons ">lock</i>
+            </span>
+            <span class="icon is-small is-right" style="width:auto;margin:0 20px">
+              <i id="not-shake" class="is-hidden">รหัสผ่านผิดพลาด</i>
+            </span>
+          </p>
+        </div>
+        <p class="has-text-right pb-3 has-text-weight-semibold"><a class="text-yellow" href="signup.html">ลืมรหัสผ่าน</a></p>
+        <button class="button is-fullwidth is-primary" onclick="shakeIt()">เข้าสู่ระบบ</button>
+      </div>
+      <div class="column">
+        <img src="images/login-botton.png">
+        <p class="pl-2 has-text-weight-semibold has-text-white">ยังไม่เป็นสมาชิก? <a class="text-yellow" href="signup.html">สมัครสมาชิกด้วยอีเมล</a></p>
+      </div>
+    </div>
+    <p class="has-text-centered has-text-white is-size-7">ข้อกำหนดการให้บริการ・นโยบายความเป็นส่วนตัว</p>
+
+
+  </section>
+
+  <script>
+    function shakeIt() {
+      var element = document.getElementById("not-shake");
+      element.classList.remove("is-hidden");
+      element.classList.add("shake-it","has-text-danger");
+      setTimeout(function(){
+        element.classList.remove("shake-it");
+        element.classList.add("is-hidden");
+      }, 3000);
+      }
+    </script>
+</body>
+</html>
