@@ -110,7 +110,7 @@
 
     <div class="columns">
       <div class="column" style="border-right: 1px solid #dbdbdb">
-        <div class="field pt-5">
+        <div class="field pt-2">
           <p class="control has-icons-left has-icons-right">
             <input class="input" type="email" placeholder="ชื่อผู้ใช้ / อีเมล">
             <span class="icon is-small is-left">
@@ -118,15 +118,16 @@
             </span>
           </p>
         </div>
+        <span class="icon is-small" style="width:auto;margin:0">
+          <i id="not-shake" class="is-hidden">อีเมลหรือนามแฝงที่คุณป้อน ไม่ตรงกับบัญชีใดๆ</i>
+        </span>
         <div class="field pt-3">
           <p class="control has-icons-left has-icons-right">
             <input class="input" type="password" placeholder="รหัสผ่าน">
             <span class="icon is-small is-left">
               <i class="material-icons ">lock</i>
             </span>
-            <span class="icon is-small is-right" style="width:auto;margin:0 20px">
-              <i id="not-shake" class="is-hidden">รหัสผ่านผิดพลาด</i>
-            </span>
+            
           </p>
         </div>
         <p class="has-text-right pb-3 has-text-weight-semibold"><a class="text-yellow" href="signup.html">ลืมรหัสผ่าน</a></p>
@@ -150,7 +151,7 @@
       setTimeout(function(){
         element.classList.remove("shake-it");
         element.classList.add("is-hidden");
-      }, 3000);
+      }, 2000);
       }
     </script>
 </body>
