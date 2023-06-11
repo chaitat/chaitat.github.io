@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="is-sky-background">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สมัครสมาชิกสกายไลค์</title>
+  <link rel="icon" href="https://m.pantip.com/fav-icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style type="text/css">
+    .is-sky-background {
+      background-color: #149ED9;
+    }
+    /* #77A2D1 */
+    .is-blue-background {
+      background-color: #77A2D1;
+    }
+    .is-nav-background {
+      background-color: #1572A1;
+    }
+    a.navbar-item:hover {
+      background-color: #149ED9;
+      color:#ffffff;
+    }
+    .hero-body {
+      width:100%;
+      margin:auto;
+      max-width: 1600px;
+    }
+    .text-yellow {
+      color: #ffd500;
+    }
+    .breadcrumb a {
+      color: #363636;
+    }
+    .breadcrumb li.is-active a {
+      color: #ffd500;
+    }
+    .breadcrumb li+li::before {
+      color: #363636;
+    }
+
+    .hero-background {
+      height:240px;
+      background-image: url('images/skylikeheader.png');
+      background-repeat: no-repeat;
+      background-position: center; 
+    }
+    .is-divider {
+      display: block;
+      position: relative;
+      border-right: 1px solid #dbdbdb;
+      height: 0.1rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .subtitle b {
+      color: #149ED9;
+    }
+    .navbar-item {
+      color: #ffffff
+    }
+    .hero {
+      border-bottom: 1px solid;
+    }
+    .create-post-wrapper {
+      border: 1px solid #363636;
+      background-color: #9EE2FF;
+    }
+    #post .navbar {
+      background-color: #ffffff;
+      color:#1572A1;
+    }
+    #post .navbar a {
+      color:#1572A1;
+    }
+    #post .navbar a:hover {
+      color:#ffffff;
+    }
+    #post .input, #post .textarea {
+      background-color: #ffffff;
+      /* 1572A1 */
+    }
+    #post > div:nth-child(4) > span > a.button.is-ghost.has-text-black:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-blue-background is-medium-with-navbar hero-background">
+    <div class="hero-body">
+    </div>
+    <nav class="navbar">
+      <div class="container is-max-widescreen">
+        <div id="navMenu" class="navbar-menu is-nav-background">
+          <div class="navbar-start">
+            <a class="navbar-item">หน้าแรก</a>
+            <a class="navbar-item">คอมมูนิตี้</a>
+            <a class="navbar-item">กิจกรรม</a>
+            <a class="navbar-item">แลกพอยต์</a>
+            <a class="navbar-item">อื่นๆ</a>
+          </div>
+          <div class="navbar-item navbar-search" style="flex-grow: 1">
+            <input class="input" type="email" placeholder="Search">
+          </div>
+          <div class="navbar-end">
+            <a class="navbar-item"><span class="icon"><i class="material-icons ">add_comment</i></span><span>&nbspตั้งกระทู้</span></a>
+            <a class="navbar-item"><span class="icon"><i class="material-icons ">mail</i></span></a>
+            <a class="navbar-item"><span class="icon"><i class="material-icons ">notifications</i></span></a>
+            <a class="navbar-item"><span class="icon"><i class="material-icons ">sentiment_satisfied</i></span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <section class="container is-max-desktop">
+    <nav class="breadcrumb has-succeeds-separator pt-3" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="#">ตั้งกระทู้</a></li>
+        <li><a href="#">เลือกประเภทกระทู้</a></li>
+        <li><a href="#">ใส่รายละเอียดกระทู้สนทนา</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+      </ul>
+    </nav>
+    <div id="post" class="create-post-wrapper p-3">
+      <p>1. ระบุหัวข้อกระทู้ของคุณ</p>
+      <div class="field">
+        <p class="py-3">
+          <input class="input" type="" placeholder="หัวข้อกระทู้">
+        </p>
+      </div>
+      <p  class="pb-3">2. เขียนรายละเอียดของกระทู้</p>
+      <div class="field">
+        <nav class="navbar">
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">undo</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">redo</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">image</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">movie</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">location_on</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">mood</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">format_bold</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">format_italic</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">format_underline</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">format_align_left</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">format_align_center</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">format_align_right</i></span></a>
+          <a class="navbar-item"><span class="icon"><i class="material-icons ">add_link</i></span></a>
+        </nav>
+        <p class="is-size-7 pb-4">
+          <textarea class="textarea" placeholder="รายละเอียดของกระทู้" style="height:350px;"></textarea>
+          * พิมพ์ข้อความได้ไม่เกิน 10,000 ตัวอักษร (0 / 10000)
+        </p>
+
+        <span><a href="skylikeblog.html" class="button is-primary has-text-black">ส่งกระทู้</a><a class="button is-ghost has-text-black">&nbsp; &nbsp; ตั้งกระทู้โดย: &nbsp; &nbsp;<span class="icon"><i class="material-icons ">mood</i></span> &nbsp; &nbsp;B_itch</a></span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function shakeIt() {
+      var element = document.getElementById("not-shake");
+      element.classList.remove("is-hidden");
+      element.classList.add("shake-it","has-text-danger");
+      setTimeout(function(){
+        element.classList.remove("shake-it");
+        element.classList.add("is-hidden");
+      }, 2000);
+      }
+    </script>
+</body>
+</html>
