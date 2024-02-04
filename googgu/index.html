@@ -27,6 +27,13 @@
     height:3em;
     }
   </style>
+  <script>
+    function redirectToResults(event) {
+        if (event.keyCode === 13) { // Check if the key pressed is Enter (key code 13)
+            window.location.href = "image-results.html";
+        }
+    }
+</script>
 </head>
 
 <body>
@@ -53,9 +60,10 @@
     <div class="container has-text-centered">
       <p><img class="pb-5" src="images/googgu.png" width=272 height=77 alt=""></p>
 
+
       <div class="field search-bar m-auto">
         <p class="control has-icons-left has-icons-right">
-          <input class="input is-rounded">
+          <input type="text" class="input is-rounded" onkeypress="redirectToResults(event)">
           <span style="padding-top:8px" class="icon is-small is-left">
             <i class="material-icons search-color">search</i>
           </span>

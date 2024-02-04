@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แพทย์ผ่าตัดสมอง - ค้นหาด้วย Googgu</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .body {
+      background-image: url("1.png");
+      box-sizing: border-box;
+    }
+
+    a {
+      color: #202124;
+    }
+
+    .container.is-fluid {
+      padding-left: 240px;
+    }
+
+    .search-bar {
+      width: 692px;
+    }
+
+    .input {
+      width: 30%;
+      min-width: 500px;
+    }
+
+    .search-icon-color {
+      color: #4285f4;
+    }
+
+    .search-bar-icon-color {
+      color: #9aa0a6;
+    }
+
+    .control.has-icons-right .icon {
+      width: auto;
+    }
+
+    .about {
+      border-left: 1px solid #dadce0;
+      padding-left: 1em;
+    }
+
+    b {
+      color: #202124;
+    }
+
+    .clame {
+      background: #fff;
+      border: 1px solid #dadce0;
+      border-radius: 18px;
+      display: inline-block;
+      position: relative;
+      height: 32px;
+    }
+
+    .LbNDAb {
+      color: #4285f4;
+    }
+
+    svg {
+      height: 60%
+    }
+
+    .spanclame {
+      height: 16px;
+      line-height: 16px;
+      width: 16px;
+    }
+
+    .control.has-icons-left .icon.is-left {
+      left: 2.5em;
+    }
+
+    .relate-search {
+      border-top: 1px solid #dadce0;
+    }
+
+
+    ul {
+      list-style: none;
+    }
+
+    .search-type {
+      margin: 1rem 0 0 5rem;
+      border: rgb(218, 220, 224) 1px solid;
+      padding: 2rem;
+    }
+
+    .is-active {
+      background-color: #E7F0FE;
+      border: white 0px solid;
+    }
+
+    .searchmenu {
+      margin-left: 1rem;
+    }
+
+    .searchdiv {
+      padding-left: 1rem;
+    }
+
+    .searchresults {
+      margin: 1rem 0 0 1rem;
+    }
+
+    /* Responsive image gallery rules begin*/
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .image-gallery>li {
+      flex: 1 1 auto;
+      /* or flex: auto; */
+      height: 200px;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 2.5rem;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    .image-gallery::after {
+      content: "";
+      flex-grow: 999;
+    }
+
+    .image-gallery li img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      border-radius: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .web-title-logo {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+    }
+
+    .image-gallery {
+      line-height: 1;
+    }
+
+    .captionbox {
+      margin-left: 0.5rem;
+    }
+
+    .menuimage {
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      border-radius: 5px 0 0 5px;
+      object-fit: cover;
+    }
+
+    .menuimagediv {
+      margin-left: 1rem;
+      border-radius: 10px;
+      border: #dbdbdb 1px solid;
+    }
+
+    .conmenuimagediv {
+      border-top: #dbdbdb 1px solid;
+      border-bottom: #dbdbdb 1px solid;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <nav class="navbar has-shadow my-5" style="position:sticky;top:0;" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img class="logo" src="images/googgu.png" width="106" height="30">
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="searchdiv field m-auto my-5">
+      <p class="control has-icons-right">
+        <input class="input is-rounded" value="แพทย์ผ่าตัดสมอง">
+        <span class="icon is-small is-right">
+          <i class="material-icons search-bar-icon-color pr-2">mic</i>
+          <i class="material-icons search-bar-icon-color pr-2">center_focus_weak</i>
+          <i class="material-icons search-icon-color pr-2">search</i>
+        </span>
+      </p>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-item" href="#">Mail</a>
+          <a class="navbar-item" href="#">ค้นรูป</a>
+          <a class="navbar-item" href="#"><i class="material-icons">apps</i></a>
+          <a class="navbar-item" href="#"><i class="material-icons profile-img">face</i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="navbar has-shadow" role="navigation" aria-label="main navigation">
+    <div class="searchmenu field">
+      <button class="button is-rounded">&#8249; ทั้งหมด</button>
+      <button class="button is-rounded is-active">ค้นรูป</button>
+      <button class="button is-rounded">วีดีโอ</button>
+      <button class="button is-rounded">แผนที่</button>
+      <button class="button is-rounded">หนังสือ</button>
+      <button class="button is-rounded">:เพิ่มเติม</button>
+    </div>
+  </div>
+
+  <div class="navbar my-5 conmenuimagediv">
+    <div class="menuimagediv is-flex">
+      <img class="menuimage" src="images/_10.avif" />
+      <span class="px-3 m-auto has-text-centered">คลินิค ศัลยกรรม</span>
+    </div>
+    <div class="menuimagediv is-flex">
+      <img class="menuimage" src="images/_2.avif" />
+      <span class="px-3 m-auto has-text-centered">เทคโนโลยี</span>
+    </div>
+    <div class="menuimagediv is-flex">
+      <img class="menuimage" src="images/_9.avif" />
+      <span class="px-3 m-auto has-text-centered">ประสาท วิทยา</span>
+    </div>
+    <div class="menuimagediv is-flex">
+      <img class="menuimage" src="images/_4.avif" />
+      <span class="px-3 m-auto has-text-centered">ทางการ แพทย์</span>
+    </div>
+    <div class="menuimagediv is-flex">
+      <img class="menuimage" src="images/_21.avif" />
+      <span class="px-3 m-auto has-text-centered">หลอดเลือดสมอง</span>
+    </div>
+  </div>
+
+  <div class="searchresults">
+    <ul class="image-gallery">
+      <li>
+        <a href="">
+          <img src="images/_1.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #4285f4; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> facebook</span>
+            <p class="">Vitality Medical Center</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_2.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #42f457; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> facebook</span>
+            <p class="">Healing Haven Hospital</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_3.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #9242f4; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealHubConnect</span>
+            <p class="">Mind Mingle</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_4.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #f442d9; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> MedPulseLink</span>
+            <p class="">Neuro Nexus</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_5.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #42f4bc; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> DocNexusHub</span>
+            <p class="">Brain Sync</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_6.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #eddd99; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealthSyncWave</span>
+            <p class="">Nerve Harbor</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_7.jpeg" alt="" />
+          <div class="captionbox"><span style="background-color: #aac7f6; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> MedVistaJunction</span>
+            <p class="">Synaptic Sway</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_8.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #f44242; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> PulseLinkCentral</span>
+            <p class="">Cortex Craft</p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="">
+          <img src="images/_9.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #ff8104; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealCrazeHub</span>
+            <p class="">Neuro Hub</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="hospital.html">
+          <img src="images/_28.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #0095ff; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> โรงพยาบาล นพเวศ</span>
+            <p class="">สมองและระบบประสาท</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_10.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #348674; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> MedSphereWave</span>
+            <p class="">Mind Wave Link</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_11.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #0095ff; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> โรงพยาบาล นพเวศ</span>
+            <p class="">หนึ่งในโรคสมอง</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_12.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #d495b9; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> BioNestLink</span>
+            <p class="">Nerve Sync Dome</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_13.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #848990; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> VitalWebNook</span>
+            <p class="">Cognitive Breeze</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_35.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #0095ff; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> โรงพยาบาล นพเวศ</span>
+            <p class="">สมองตายเพราะขาดเลือด</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_14.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #62ff00; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> DocSyncBreeze</span>
+            <p class="">Neural Harmony</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_15.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #42f4ad; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealHarborHub</span>
+            <p class="">Mind Pulse Wave</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_16.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #49964d; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> MediMingleWave</span>
+            <p class="">Cortex Connect</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_17.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #fdb1b1; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> PulseNexConnect</span>
+            <p class="">Neuro Sphere</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_18.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #1564e2; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealthSyncDome</span>
+            <p class="">Brain Bridge Link</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_19.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #0092a5; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> BioBridgeHub</span>
+            <p class="">Nerve Nest Web</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_20.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #f442cd; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealHavenWeb</span>
+            <p class="">Thought Harbor</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_21.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #12171f; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> MedVibeLink</span>
+            <p class="">Synaptic Web Wave</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_22.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #444b40; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> PulseNookCentral</span>
+            <p class="">Mind Sync Hub</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_23.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #827b6a; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> WellnessWebWave</span>
+            <p class="">Cognitive Wave Link</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_24.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #b342f4; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> DocDomeHub</span>
+            <p class="">Brain Burst Web</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_25.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #bff442; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealthPulseLink</span>
+            <p class="">Neural Junction</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_26.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #54f442; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealBurstWeb</span>
+            <p class="">Nerve Vibe Hub</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_27.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #f4428f; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> MedNestWave</span>
+            <p class="">Cortex Link Wave</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_29.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #0095ff; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> โรงพยาบาล นพเวศ</span>
+            <p class="">โรคหลอดเลือดสมอง</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_30.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #7cb3a3; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> PulseHarmonyHub</span>
+            <p class="">Mind Sphere Wave</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_31.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #828486; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> VitalConnectDome</span>
+            <p class="">Brain Breeze Hub</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_32.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #69a3ff; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> HealJunctionWeb</span>
+            <p class="">Nerve Mingle Link</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_33.avif" alt="" />
+          <div class="captionbox"><span style="background-color: #06647b; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> MedSyncHarbor</span>
+            <p class="">Thought Sync Web</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="images/_34.jpg" alt="" />
+          <div class="captionbox"><span style="background-color: #a29f00; border-radius: 100%;"
+              class="web-title-logo"></span><span class="webtitle is-size-7"> PulseVistaHub</span>
+            <p class="">Neuro Pulse Link</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>
